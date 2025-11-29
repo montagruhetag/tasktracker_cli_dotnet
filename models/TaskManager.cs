@@ -56,9 +56,7 @@ public class TaskManager
 
     private Task CreateTask(string description)
     {
-        int maxId = 1;
-        if (Tasks.Count > 0)
-            maxId = Tasks.OrderByDescending(x => x.Id).First().Id + 1;
+        int maxId = Tasks.Count > 0 ? Tasks.Max(t => t.Id) + 1 : 1;
         return new Task(maxId, description, 0, DateTime.Now, DateTime.Now);
     }
 
