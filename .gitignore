@@ -1,0 +1,4 @@
+bin/
+obj/
+build.ps1
+*.sln
